@@ -1,0 +1,259 @@
+Groups: {'kinematics': 10, 'gps': 2, 'context': 3, 'mapaware': 2, 'trip_static': 2, 'quality': 0}
+✅ Split sizes: 28803 9681 9488
+✅ Data ready: (28803, 60, 26) (28803, 0) | Dyn: 0 | Static: 0
+
+
+[BiLSTM_Full] epoch 1 train_loss=0.4868 val_loss=1.2239 A: PR-AUC=0.804 F1=0.659  B: PR-AUC=0.820 F1=0.650
+[BiLSTM_Full] epoch 2 train_loss=0.4268 val_loss=1.2232 A: PR-AUC=0.830 F1=0.616  B: PR-AUC=0.844 F1=0.629
+[BiLSTM_Full] epoch 3 train_loss=0.4193 val_loss=1.1782 A: PR-AUC=0.833 F1=0.669  B: PR-AUC=0.847 F1=0.670
+[BiLSTM_Full] epoch 5 train_loss=0.4099 val_loss=1.1836 A: PR-AUC=0.837 F1=0.672  B: PR-AUC=0.852 F1=0.670
+[BiLSTM_Full] epoch 6 train_loss=0.4043 val_loss=1.1865 A: PR-AUC=0.843 F1=0.668  B: PR-AUC=0.856 F1=0.679
+[BiLSTM_Full] epoch 7 train_loss=0.3968 val_loss=1.1971 A: PR-AUC=0.845 F1=0.667  B: PR-AUC=0.861 F1=0.673
+[BiLSTM_Full] epoch 8 train_loss=0.3893 val_loss=1.1114 A: PR-AUC=0.854 F1=0.734  B: PR-AUC=0.870 F1=0.744
+[BiLSTM_Full] epoch 9 train_loss=0.3737 val_loss=1.1094 A: PR-AUC=0.859 F1=0.739  B: PR-AUC=0.873 F1=0.749
+[BiLSTM_Full] epoch 10 train_loss=0.3576 val_loss=1.1670 A: PR-AUC=0.861 F1=0.707  B: PR-AUC=0.879 F1=0.730
+[BiLSTM_Full] epoch 11 train_loss=0.3385 val_loss=1.0656 A: PR-AUC=0.872 F1=0.784  B: PR-AUC=0.885 F1=0.774
+[BiLSTM_Full] epoch 12 train_loss=0.3110 val_loss=1.0582 A: PR-AUC=0.882 F1=0.765  B: PR-AUC=0.898 F1=0.790
+[BiLSTM_Full] epoch 13 train_loss=0.2819 val_loss=1.0312 A: PR-AUC=0.889 F1=0.787  B: PR-AUC=0.905 F1=0.805
+[BiLSTM_Full] epoch 14 train_loss=0.2507 val_loss=1.0141 A: PR-AUC=0.895 F1=0.803  B: PR-AUC=0.908 F1=0.818
+[BiLSTM_Full] epoch 15 train_loss=0.2243 val_loss=0.9629 A: PR-AUC=0.899 F1=0.824  B: PR-AUC=0.917 F1=0.832
+[BiLSTM_Full] epoch 16 train_loss=0.1914 val_loss=1.0628 A: PR-AUC=0.902 F1=0.814  B: PR-AUC=0.920 F1=0.815
+[BiLSTM_Full] epoch 17 train_loss=0.1638 val_loss=0.9685 A: PR-AUC=0.911 F1=0.843  B: PR-AUC=0.920 F1=0.847
+[BiLSTM_Full] epoch 18 train_loss=0.1427 val_loss=0.9845 A: PR-AUC=0.910 F1=0.856  B: PR-AUC=0.921 F1=0.853
+[BiLSTM_Full] epoch 19 train_loss=0.1201 val_loss=0.9936 A: PR-AUC=0.916 F1=0.859  B: PR-AUC=0.927 F1=0.859
+[BiLSTM_Full] epoch 20 train_loss=0.1026 val_loss=1.0419 A: PR-AUC=0.916 F1=0.839  B: PR-AUC=0.931 F1=0.862
+🛑 Early stopping at epoch 20
+Full BiLSTM: {'precision_auc_A': 0.9474697019587588, 'f1_A': 0.900969774191265, 'precision_auc_B': 0.9445388310414332, 'rmse_C': 0.06403554599628089, 'ece': 0.05004494266606504, 'ttd_s': 0.4528219337902873, 'fp_per_hour': 68.75210792580101}
+
+
+A1
+[LightGBM] [Info] Number of positive: 18464, number of negative: 10339
+[LightGBM] [Info] Auto-choosing col-wise multi-threading, the overhead of testing was 0.017901 seconds.
+You can set `force_col_wise=true` to remove the overhead.
+[LightGBM] [Info] Total Bins 16385
+[LightGBM] [Info] Number of data points in the train set: 28803, number of used features: 101
+[LightGBM] [Info] [binary:BoostFromScore]: pavg=0.641044 -> initscore=0.579900
+[LightGBM] [Info] Start training from score 0.579900
+Training until validation scores don't improve for 50 rounds
+Did not meet early stopping. Best iteration is:
+[1000]	valid_0's average_precision: 0.948609	valid_0's binary_logloss: 0.340291
+[LightGBM] [Info] Number of positive: 18327, number of negative: 10476
+[LightGBM] [Info] Auto-choosing col-wise multi-threading, the overhead of testing was 0.016577 seconds.
+You can set `force_col_wise=true` to remove the overhead.
+[LightGBM] [Info] Total Bins 16385
+[LightGBM] [Info] Number of data points in the train set: 28803, number of used features: 101
+[LightGBM] [Info] [binary:BoostFromScore]: pavg=0.636288 -> initscore=0.559288
+[LightGBM] [Info] Start training from score 0.559288
+Training until validation scores don't improve for 50 rounds
+Did not meet early stopping. Best iteration is:
+[999]	valid_0's average_precision: 0.954704	valid_0's binary_logloss: 0.325119
+[LightGBM] [Info] Auto-choosing col-wise multi-threading, the overhead of testing was 0.017038 seconds.
+You can set `force_col_wise=true` to remove the overhead.
+[LightGBM] [Info] Total Bins 16385
+[LightGBM] [Info] Number of data points in the train set: 28803, number of used features: 101
+[LightGBM] [Info] Start training from score 0.284954
+Training until validation scores don't improve for 50 rounds
+Did not meet early stopping. Best iteration is:
+[1000]	valid_0's rmse: 0.0510223	valid_0's l2: 0.00260327
+GBM: {'precision_auc_A': 0.9825485940431886, 'f1_A': 0.958790224324518, 'precision_auc_B': 0.985422939676381, 'rmse_C': 0.03329294137313945, 'ece': 0.06404407569862597, 'ttd_s': 0.16114919060813768, 'fp_per_hour': 30.88532883642496}
+
+[A2] epoch 1 train_loss=0.4860 val_loss=1.2171 A: PR-AUC=0.821 F1=0.647  B: PR-AUC=0.831 F1=0.651
+[A2] epoch 2 train_loss=0.4273 val_loss=1.1863 A: PR-AUC=0.833 F1=0.661  B: PR-AUC=0.846 F1=0.653
+[A2] epoch 3 train_loss=0.4181 val_loss=1.2092 A: PR-AUC=0.835 F1=0.646  B: PR-AUC=0.846 F1=0.644
+[A2] epoch 4 train_loss=0.4138 val_loss=1.1917 A: PR-AUC=0.837 F1=0.647  B: PR-AUC=0.851 F1=0.667
+[A2] epoch 5 train_loss=0.4096 val_loss=1.1497 A: PR-AUC=0.840 F1=0.699  B: PR-AUC=0.853 F1=0.712
+[A2] epoch 6 train_loss=0.4043 val_loss=1.1982 A: PR-AUC=0.841 F1=0.652  B: PR-AUC=0.856 F1=0.668
+[A2] epoch 7 train_loss=0.3966 val_loss=1.1716 A: PR-AUC=0.847 F1=0.687  B: PR-AUC=0.863 F1=0.687
+[A2] epoch 8 train_loss=0.3865 val_loss=1.1563 A: PR-AUC=0.851 F1=0.729  B: PR-AUC=0.867 F1=0.688
+[A2] epoch 9 train_loss=0.3723 val_loss=1.1193 A: PR-AUC=0.853 F1=0.736  B: PR-AUC=0.874 F1=0.734
+[A2] epoch 10 train_loss=0.3562 val_loss=1.1185 A: PR-AUC=0.865 F1=0.752  B: PR-AUC=0.883 F1=0.738
+[A2] epoch 11 train_loss=0.3349 val_loss=1.0666 A: PR-AUC=0.869 F1=0.764  B: PR-AUC=0.892 F1=0.778
+[A2] epoch 12 train_loss=0.3085 val_loss=1.0399 A: PR-AUC=0.881 F1=0.789  B: PR-AUC=0.898 F1=0.786
+[A2] epoch 13 train_loss=0.2775 val_loss=0.9966 A: PR-AUC=0.886 F1=0.795  B: PR-AUC=0.896 F1=0.820
+[A2] epoch 14 train_loss=0.2475 val_loss=1.0088 A: PR-AUC=0.893 F1=0.803  B: PR-AUC=0.907 F1=0.814
+[A2] epoch 15 train_loss=0.2183 val_loss=0.9786 A: PR-AUC=0.903 F1=0.815  B: PR-AUC=0.911 F1=0.837
+[A2] epoch 16 train_loss=0.1931 val_loss=0.9731 A: PR-AUC=0.905 F1=0.831  B: PR-AUC=0.912 F1=0.838
+[A2] epoch 17 train_loss=0.1676 val_loss=0.9707 A: PR-AUC=0.907 F1=0.840  B: PR-AUC=0.918 F1=0.852
+[A2] epoch 18 train_loss=0.1393 val_loss=1.0370 A: PR-AUC=0.901 F1=0.833  B: PR-AUC=0.921 F1=0.842
+[A2] epoch 19 train_loss=0.1175 val_loss=1.0364 A: PR-AUC=0.913 F1=0.861  B: PR-AUC=0.922 F1=0.851
+[A2] epoch 20 train_loss=0.1033 val_loss=1.0303 A: PR-AUC=0.918 F1=0.860  B: PR-AUC=0.923 F1=0.855
+[A2] epoch 21 train_loss=0.0893 val_loss=1.0461 A: PR-AUC=0.913 F1=0.867  B: PR-AUC=0.923 F1=0.870
+[A2] epoch 22 train_loss=0.0750 val_loss=1.0988 A: PR-AUC=0.911 F1=0.864  B: PR-AUC=0.924 F1=0.870
+🛑 Early stopping at epoch 22
+[A3] epoch 1 train_loss=0.4846 val_loss=1.2635 A: PR-AUC=0.816 F1=0.644  B: PR-AUC=0.829 F1=0.628
+[A3] epoch 2 train_loss=0.4274 val_loss=1.1695 A: PR-AUC=0.829 F1=0.689  B: PR-AUC=0.843 F1=0.683
+[A3] epoch 4 train_loss=0.4156 val_loss=1.1990 A: PR-AUC=0.834 F1=0.645  B: PR-AUC=0.850 F1=0.644
+[A3] epoch 5 train_loss=0.4110 val_loss=1.1992 A: PR-AUC=0.839 F1=0.636  B: PR-AUC=0.853 F1=0.646
+[A3] epoch 6 train_loss=0.4055 val_loss=1.2001 A: PR-AUC=0.841 F1=0.658  B: PR-AUC=0.857 F1=0.658
+[A3] epoch 7 train_loss=0.4038 val_loss=1.1850 A: PR-AUC=0.843 F1=0.675  B: PR-AUC=0.858 F1=0.669
+🛑 Early stopping at epoch 7
+[A5] epoch 1 train_loss=0.4887 val_loss=1.2517 A: PR-AUC=0.804 F1=0.664  B: PR-AUC=0.813 F1=0.657
+[A5] epoch 2 train_loss=0.4301 val_loss=1.2444 A: PR-AUC=0.831 F1=0.602  B: PR-AUC=0.844 F1=0.614
+[A5] epoch 3 train_loss=0.4185 val_loss=1.2128 A: PR-AUC=0.833 F1=0.630  B: PR-AUC=0.847 F1=0.642
+[A5] epoch 4 train_loss=0.4149 val_loss=1.1844 A: PR-AUC=0.838 F1=0.661  B: PR-AUC=0.849 F1=0.658
+[A5] epoch 5 train_loss=0.4081 val_loss=1.1742 A: PR-AUC=0.835 F1=0.666  B: PR-AUC=0.852 F1=0.716
+[A5] epoch 6 train_loss=0.4035 val_loss=1.1717 A: PR-AUC=0.846 F1=0.684  B: PR-AUC=0.857 F1=0.695
+[A5] epoch 7 train_loss=0.3956 val_loss=1.1924 A: PR-AUC=0.843 F1=0.656  B: PR-AUC=0.862 F1=0.671
+[A5] epoch 8 train_loss=0.3864 val_loss=1.1366 A: PR-AUC=0.853 F1=0.706  B: PR-AUC=0.868 F1=0.728
+[A5] epoch 9 train_loss=0.3718 val_loss=1.1478 A: PR-AUC=0.860 F1=0.705  B: PR-AUC=0.873 F1=0.722
+[A5] epoch 10 train_loss=0.3549 val_loss=1.0772 A: PR-AUC=0.866 F1=0.756  B: PR-AUC=0.879 F1=0.774
+[A5] epoch 11 train_loss=0.3342 val_loss=1.0710 A: PR-AUC=0.875 F1=0.752  B: PR-AUC=0.890 F1=0.777
+[A5] epoch 12 train_loss=0.3069 val_loss=1.0328 A: PR-AUC=0.883 F1=0.791  B: PR-AUC=0.898 F1=0.786
+[A5] epoch 13 train_loss=0.2791 val_loss=0.9673 A: PR-AUC=0.893 F1=0.831  B: PR-AUC=0.904 F1=0.817
+[A5] epoch 14 train_loss=0.2449 val_loss=0.9710 A: PR-AUC=0.897 F1=0.812  B: PR-AUC=0.909 F1=0.836
+[A5] epoch 15 train_loss=0.2135 val_loss=0.9676 A: PR-AUC=0.902 F1=0.832  B: PR-AUC=0.915 F1=0.828
+[A5] epoch 16 train_loss=0.1872 val_loss=0.9533 A: PR-AUC=0.908 F1=0.823  B: PR-AUC=0.917 F1=0.852
+[A5] epoch 17 train_loss=0.1563 val_loss=0.9635 A: PR-AUC=0.913 F1=0.853  B: PR-AUC=0.924 F1=0.843
+[A5] epoch 18 train_loss=0.1362 val_loss=0.9847 A: PR-AUC=0.905 F1=0.850  B: PR-AUC=0.921 F1=0.863
+[A5] epoch 19 train_loss=0.1156 val_loss=1.0188 A: PR-AUC=0.917 F1=0.854  B: PR-AUC=0.923 F1=0.858
+[A5] epoch 20 train_loss=0.0977 val_loss=1.0231 A: PR-AUC=0.916 F1=0.863  B: PR-AUC=0.925 F1=0.860
+[A5] epoch 21 train_loss=0.0869 val_loss=1.0385 A: PR-AUC=0.915 F1=0.863  B: PR-AUC=0.928 F1=0.868
+🛑 Early stopping at epoch 21
+[A6] epoch 1 train_loss=0.4831 val_loss=1.2735 A: PR-AUC=0.819 F1=0.577  B: PR-AUC=0.830 F1=0.563
+[A6] epoch 2 train_loss=0.4251 val_loss=1.2561 A: PR-AUC=0.829 F1=0.610  B: PR-AUC=0.844 F1=0.601
+[A6] epoch 3 train_loss=0.4185 val_loss=1.1627 A: PR-AUC=0.834 F1=0.686  B: PR-AUC=0.847 F1=0.694
+[A6] epoch 4 train_loss=0.4139 val_loss=1.1764 A: PR-AUC=0.838 F1=0.663  B: PR-AUC=0.851 F1=0.675
+[A6] epoch 5 train_loss=0.4092 val_loss=1.1708 A: PR-AUC=0.838 F1=0.674  B: PR-AUC=0.853 F1=0.691
+[A6] epoch 6 train_loss=0.4035 val_loss=1.2065 A: PR-AUC=0.845 F1=0.653  B: PR-AUC=0.857 F1=0.669
+[A6] epoch 7 train_loss=0.3951 val_loss=1.1304 A: PR-AUC=0.848 F1=0.708  B: PR-AUC=0.863 F1=0.739
+[A6] epoch 8 train_loss=0.3855 val_loss=1.1439 A: PR-AUC=0.848 F1=0.716  B: PR-AUC=0.869 F1=0.707
+[A6] epoch 9 train_loss=0.3706 val_loss=1.1099 A: PR-AUC=0.859 F1=0.740  B: PR-AUC=0.875 F1=0.744
+[A6] epoch 10 train_loss=0.3528 val_loss=1.0861 A: PR-AUC=0.861 F1=0.760  B: PR-AUC=0.883 F1=0.767
+[A6] epoch 11 train_loss=0.3321 val_loss=1.1288 A: PR-AUC=0.866 F1=0.735  B: PR-AUC=0.890 F1=0.738
+[A6] epoch 12 train_loss=0.3095 val_loss=1.0535 A: PR-AUC=0.879 F1=0.774  B: PR-AUC=0.896 F1=0.791
+[A6] epoch 13 train_loss=0.2798 val_loss=1.0143 A: PR-AUC=0.882 F1=0.802  B: PR-AUC=0.898 F1=0.808
+[A6] epoch 14 train_loss=0.2524 val_loss=1.0101 A: PR-AUC=0.890 F1=0.809  B: PR-AUC=0.908 F1=0.811
+[A6] epoch 15 train_loss=0.2243 val_loss=0.9858 A: PR-AUC=0.898 F1=0.821  B: PR-AUC=0.911 F1=0.827
+[A6] epoch 16 train_loss=0.1956 val_loss=0.9831 A: PR-AUC=0.902 F1=0.822  B: PR-AUC=0.913 F1=0.839
+[A6] epoch 17 train_loss=0.1764 val_loss=1.0171 A: PR-AUC=0.904 F1=0.836  B: PR-AUC=0.917 F1=0.829
+[A6] epoch 18 train_loss=0.1469 val_loss=0.9937 A: PR-AUC=0.913 F1=0.844  B: PR-AUC=0.917 F1=0.844
+[A6] epoch 19 train_loss=0.1286 val_loss=0.9884 A: PR-AUC=0.918 F1=0.844  B: PR-AUC=0.927 F1=0.861
+[A6] epoch 20 train_loss=0.1065 val_loss=1.0377 A: PR-AUC=0.917 F1=0.855  B: PR-AUC=0.921 F1=0.863
+[A7] epoch 1 train_loss=0.4852 val_loss=1.2633 A: PR-AUC=0.819 F1=0.619  B: PR-AUC=0.830 F1=0.631
+[A7] epoch 2 train_loss=0.4280 val_loss=1.1807 A: PR-AUC=0.830 F1=0.660  B: PR-AUC=0.842 F1=0.679
+[A7] epoch 3 train_loss=0.4194 val_loss=1.1894 A: PR-AUC=0.834 F1=0.664  B: PR-AUC=0.847 F1=0.667
+[A7] epoch 4 train_loss=0.4144 val_loss=1.2050 A: PR-AUC=0.836 F1=0.660  B: PR-AUC=0.850 F1=0.642
+[A7] epoch 5 train_loss=0.4102 val_loss=1.1476 A: PR-AUC=0.839 F1=0.708  B: PR-AUC=0.855 F1=0.708
+[A7] epoch 6 train_loss=0.4059 val_loss=1.1538 A: PR-AUC=0.839 F1=0.682  B: PR-AUC=0.858 F1=0.707
+[A7] epoch 7 train_loss=0.3993 val_loss=1.2330 A: PR-AUC=0.843 F1=0.642  B: PR-AUC=0.862 F1=0.633
+[A7] epoch 8 train_loss=0.3900 val_loss=1.1494 A: PR-AUC=0.851 F1=0.694  B: PR-AUC=0.867 F1=0.716
+[A7] epoch 9 train_loss=0.3784 val_loss=1.1307 A: PR-AUC=0.856 F1=0.712  B: PR-AUC=0.877 F1=0.728
+[A7] epoch 10 train_loss=0.3602 val_loss=1.0968 A: PR-AUC=0.863 F1=0.744  B: PR-AUC=0.882 F1=0.759
+[A7] epoch 11 train_loss=0.3396 val_loss=1.1356 A: PR-AUC=0.869 F1=0.729  B: PR-AUC=0.887 F1=0.745
+[A7] epoch 12 train_loss=0.3133 val_loss=1.0123 A: PR-AUC=0.878 F1=0.790  B: PR-AUC=0.899 F1=0.799
+[A7] epoch 13 train_loss=0.2847 val_loss=1.0120 A: PR-AUC=0.886 F1=0.804  B: PR-AUC=0.902 F1=0.807
+[A7] epoch 14 train_loss=0.2527 val_loss=0.9734 A: PR-AUC=0.897 F1=0.819  B: PR-AUC=0.914 F1=0.813
+[A7] epoch 15 train_loss=0.2244 val_loss=0.9807 A: PR-AUC=0.902 F1=0.812  B: PR-AUC=0.917 F1=0.827
+[A7] epoch 16 train_loss=0.1906 val_loss=0.9556 A: PR-AUC=0.899 F1=0.840  B: PR-AUC=0.918 F1=0.848
+[A7] epoch 17 train_loss=0.1677 val_loss=0.9572 A: PR-AUC=0.912 F1=0.845  B: PR-AUC=0.923 F1=0.846
+[A7] epoch 18 train_loss=0.1419 val_loss=0.9553 A: PR-AUC=0.914 F1=0.847  B: PR-AUC=0.923 F1=0.852
+[A7] epoch 19 train_loss=0.1248 val_loss=0.9723 A: PR-AUC=0.912 F1=0.858  B: PR-AUC=0.928 F1=0.858
+[A7] epoch 20 train_loss=0.1052 val_loss=0.9875 A: PR-AUC=0.914 F1=0.864  B: PR-AUC=0.929 F1=0.867
+[A7] epoch 21 train_loss=0.0855 val_loss=1.1129 A: PR-AUC=0.916 F1=0.850  B: PR-AUC=0.929 F1=0.860
+[A7] epoch 22 train_loss=0.0814 val_loss=1.0986 A: PR-AUC=0.924 F1=0.865  B: PR-AUC=0.929 F1=0.854
+[A7] epoch 23 train_loss=0.0674 val_loss=1.1235 A: PR-AUC=0.921 F1=0.862  B: PR-AUC=0.930 F1=0.866
+🛑 Early stopping at epoch 23
+[A8] epoch 1 train_loss=0.4882 val_loss=1.2212 A: PR-AUC=0.819 F1=0.642  B: PR-AUC=0.826 F1=0.645
+[A8] epoch 2 train_loss=0.4271 val_loss=1.2030 A: PR-AUC=0.830 F1=0.628  B: PR-AUC=0.843 F1=0.638
+[A8] epoch 3 train_loss=0.4197 val_loss=1.1963 A: PR-AUC=0.832 F1=0.652  B: PR-AUC=0.847 F1=0.648
+[A8] epoch 4 train_loss=0.4150 val_loss=1.1813 A: PR-AUC=0.835 F1=0.670  B: PR-AUC=0.849 F1=0.664
+[A8] epoch 5 train_loss=0.4106 val_loss=1.1830 A: PR-AUC=0.838 F1=0.670  B: PR-AUC=0.852 F1=0.665
+[A8] epoch 6 train_loss=0.4063 val_loss=1.2070 A: PR-AUC=0.844 F1=0.646  B: PR-AUC=0.854 F1=0.632
+[A8] epoch 7 train_loss=0.3994 val_loss=1.1849 A: PR-AUC=0.844 F1=0.692  B: PR-AUC=0.858 F1=0.658
+[A8] epoch 8 train_loss=0.3902 val_loss=1.1420 A: PR-AUC=0.850 F1=0.727  B: PR-AUC=0.862 F1=0.719
+[A8] epoch 9 train_loss=0.3804 val_loss=1.1023 A: PR-AUC=0.856 F1=0.741  B: PR-AUC=0.872 F1=0.765
+[A8] epoch 10 train_loss=0.3653 val_loss=1.1610 A: PR-AUC=0.856 F1=0.729  B: PR-AUC=0.873 F1=0.710
+[A8] epoch 11 train_loss=0.3462 val_loss=1.0787 A: PR-AUC=0.868 F1=0.770  B: PR-AUC=0.881 F1=0.753
+[A8] epoch 12 train_loss=0.3221 val_loss=1.0580 A: PR-AUC=0.872 F1=0.785  B: PR-AUC=0.890 F1=0.774
+[A8] epoch 13 train_loss=0.2952 val_loss=1.0798 A: PR-AUC=0.883 F1=0.765  B: PR-AUC=0.895 F1=0.775
+[A8] epoch 14 train_loss=0.2658 val_loss=0.9971 A: PR-AUC=0.890 F1=0.809  B: PR-AUC=0.902 F1=0.812
+[A8] epoch 15 train_loss=0.2359 val_loss=0.9734 A: PR-AUC=0.907 F1=0.822  B: PR-AUC=0.914 F1=0.815
+[A8] epoch 16 train_loss=0.2088 val_loss=0.9726 A: PR-AUC=0.905 F1=0.819  B: PR-AUC=0.912 F1=0.844
+[A8] epoch 17 train_loss=0.1801 val_loss=0.9705 A: PR-AUC=0.911 F1=0.838  B: PR-AUC=0.914 F1=0.844
+[A8] epoch 18 train_loss=0.1524 val_loss=0.9699 A: PR-AUC=0.906 F1=0.850  B: PR-AUC=0.919 F1=0.851
+[A8] epoch 19 train_loss=0.1350 val_loss=0.9727 A: PR-AUC=0.917 F1=0.852  B: PR-AUC=0.921 F1=0.863
+[A8] epoch 20 train_loss=0.1183 val_loss=0.9964 A: PR-AUC=0.918 F1=0.859  B: PR-AUC=0.922 F1=0.861
+[A8] epoch 21 train_loss=0.1010 val_loss=0.9974 A: PR-AUC=0.920 F1=0.867  B: PR-AUC=0.924 F1=0.867
+[A8] epoch 22 train_loss=0.0794 val_loss=1.0545 A: PR-AUC=0.923 F1=0.872  B: PR-AUC=0.925 F1=0.860
+[A8] epoch 23 train_loss=0.0726 val_loss=1.0764 A: PR-AUC=0.922 F1=0.863  B: PR-AUC=0.925 F1=0.866
+🛑 Early stopping at epoch 23
+[A9] epoch 1 train_loss=0.0715 val_loss=1.3975 A: PR-AUC=0.786 F1=0.517  B: PR-AUC=0.802 F1=0.489
+[A9] epoch 2 train_loss=0.0625 val_loss=1.3075 A: PR-AUC=0.828 F1=0.537  B: PR-AUC=0.842 F1=0.549
+[A9] epoch 3 train_loss=0.0610 val_loss=1.3085 A: PR-AUC=0.832 F1=0.526  B: PR-AUC=0.844 F1=0.531
+[A9] epoch 4 train_loss=0.0604 val_loss=1.2740 A: PR-AUC=0.838 F1=0.575  B: PR-AUC=0.850 F1=0.594
+[A9] epoch 5 train_loss=0.0598 val_loss=1.3207 A: PR-AUC=0.840 F1=0.528  B: PR-AUC=0.852 F1=0.524
+[A9] epoch 6 train_loss=0.0591 val_loss=1.2899 A: PR-AUC=0.844 F1=0.550  B: PR-AUC=0.858 F1=0.569
+[A9] epoch 7 train_loss=0.0582 val_loss=1.2494 A: PR-AUC=0.845 F1=0.599  B: PR-AUC=0.864 F1=0.636
+[A9] epoch 8 train_loss=0.0572 val_loss=1.2611 A: PR-AUC=0.850 F1=0.588  B: PR-AUC=0.866 F1=0.602
+[A9] epoch 9 train_loss=0.0553 val_loss=1.2252 A: PR-AUC=0.857 F1=0.650  B: PR-AUC=0.871 F1=0.664
+[A9] epoch 10 train_loss=0.0530 val_loss=1.2465 A: PR-AUC=0.865 F1=0.637  B: PR-AUC=0.883 F1=0.612
+[A9] epoch 11 train_loss=0.0498 val_loss=1.1924 A: PR-AUC=0.874 F1=0.705  B: PR-AUC=0.886 F1=0.670
+[A9] epoch 12 train_loss=0.0460 val_loss=1.1653 A: PR-AUC=0.888 F1=0.724  B: PR-AUC=0.899 F1=0.695
+[A9] epoch 13 train_loss=0.0413 val_loss=1.0818 A: PR-AUC=0.894 F1=0.764  B: PR-AUC=0.907 F1=0.783
+[A9] epoch 14 train_loss=0.0362 val_loss=1.0539 A: PR-AUC=0.907 F1=0.759  B: PR-AUC=0.913 F1=0.786
+[A9] epoch 15 train_loss=0.0312 val_loss=1.0037 A: PR-AUC=0.911 F1=0.770  B: PR-AUC=0.914 F1=0.799
+[A9] epoch 16 train_loss=0.0269 val_loss=0.9578 A: PR-AUC=0.913 F1=0.824  B: PR-AUC=0.922 F1=0.801
+[A9] epoch 17 train_loss=0.0225 val_loss=0.9029 A: PR-AUC=0.920 F1=0.835  B: PR-AUC=0.930 F1=0.829
+[A9] epoch 18 train_loss=0.0183 val_loss=0.8650 A: PR-AUC=0.926 F1=0.846  B: PR-AUC=0.926 F1=0.840
+[A9] epoch 19 train_loss=0.0157 val_loss=0.8122 A: PR-AUC=0.930 F1=0.855  B: PR-AUC=0.934 F1=0.853
+[A9] epoch 20 train_loss=0.0139 val_loss=0.7798 A: PR-AUC=0.933 F1=0.865  B: PR-AUC=0.933 F1=0.867
+[A9] epoch 21 train_loss=0.0111 val_loss=0.7995 A: PR-AUC=0.931 F1=0.865  B: PR-AUC=0.931 F1=0.850
+[A9] epoch 22 train_loss=0.0107 val_loss=0.7842 A: PR-AUC=0.930 F1=0.871  B: PR-AUC=0.933 F1=0.858
+[A9] epoch 23 train_loss=0.0096 val_loss=0.7873 A: PR-AUC=0.931 F1=0.865  B: PR-AUC=0.937 F1=0.862
+[A9] epoch 24 train_loss=0.0072 val_loss=0.7738 A: PR-AUC=0.935 F1=0.866  B: PR-AUC=0.936 F1=0.872
+[A9] epoch 25 train_loss=0.0061 val_loss=0.7872 A: PR-AUC=0.933 F1=0.873  B: PR-AUC=0.936 F1=0.860
+[A10] epoch 1 train_loss=0.4464 val_loss=1.1853 A: PR-AUC=0.838 F1=0.642  B: PR-AUC=0.851 F1=0.675
+[A10] epoch 2 train_loss=0.4105 val_loss=1.1887 A: PR-AUC=0.844 F1=0.649  B: PR-AUC=0.857 F1=0.661
+[A10] epoch 3 train_loss=0.4040 val_loss=1.1737 A: PR-AUC=0.845 F1=0.656  B: PR-AUC=0.861 F1=0.689
+[A10] epoch 4 train_loss=0.3983 val_loss=1.1537 A: PR-AUC=0.849 F1=0.676  B: PR-AUC=0.863 F1=0.724
+[A10] epoch 5 train_loss=0.3915 val_loss=1.1535 A: PR-AUC=0.852 F1=0.700  B: PR-AUC=0.867 F1=0.696
+[A10] epoch 6 train_loss=0.3848 val_loss=1.1001 A: PR-AUC=0.854 F1=0.748  B: PR-AUC=0.869 F1=0.749
+[A10] epoch 7 train_loss=0.3781 val_loss=1.1337 A: PR-AUC=0.853 F1=0.713  B: PR-AUC=0.875 F1=0.731
+[A10] epoch 8 train_loss=0.3709 val_loss=1.1114 A: PR-AUC=0.858 F1=0.729  B: PR-AUC=0.874 F1=0.749
+[A10] epoch 9 train_loss=0.3637 val_loss=1.0814 A: PR-AUC=0.860 F1=0.738  B: PR-AUC=0.879 F1=0.778
+[A10] epoch 10 train_loss=0.3577 val_loss=1.1170 A: PR-AUC=0.864 F1=0.721  B: PR-AUC=0.881 F1=0.741
+[A10] epoch 11 train_loss=0.3508 val_loss=1.0883 A: PR-AUC=0.866 F1=0.739  B: PR-AUC=0.884 F1=0.772
+[A10] epoch 12 train_loss=0.3435 val_loss=1.1056 A: PR-AUC=0.869 F1=0.763  B: PR-AUC=0.882 F1=0.730
+[A10] epoch 13 train_loss=0.3374 val_loss=1.1543 A: PR-AUC=0.872 F1=0.766  B: PR-AUC=0.887 F1=0.684
+[A10] epoch 14 train_loss=0.3318 val_loss=1.1422 A: PR-AUC=0.870 F1=0.700  B: PR-AUC=0.889 F1=0.767
+🛑 Early stopping at epoch 14
+[A4] epoch 1 train_loss=0.4852 val_loss=1.2322 A: PR-AUC=0.814 F1=0.595  B: PR-AUC=0.828 F1=0.609
+[A4] epoch 2 train_loss=0.4273 val_loss=1.2282 A: PR-AUC=0.827 F1=0.609  B: PR-AUC=0.843 F1=0.621
+[A4] epoch 3 train_loss=0.4189 val_loss=1.1999 A: PR-AUC=0.834 F1=0.639  B: PR-AUC=0.848 F1=0.636
+[A4] epoch 4 train_loss=0.4148 val_loss=1.1901 A: PR-AUC=0.836 F1=0.649  B: PR-AUC=0.850 F1=0.662
+[A4] epoch 5 train_loss=0.4109 val_loss=1.1564 A: PR-AUC=0.838 F1=0.681  B: PR-AUC=0.854 F1=0.719
+[A4] epoch 6 train_loss=0.4059 val_loss=1.1409 A: PR-AUC=0.843 F1=0.707  B: PR-AUC=0.857 F1=0.725
+[A4] epoch 7 train_loss=0.3987 val_loss=1.1793 A: PR-AUC=0.844 F1=0.666  B: PR-AUC=0.863 F1=0.682
+[A4] epoch 8 train_loss=0.3898 val_loss=1.1447 A: PR-AUC=0.847 F1=0.690  B: PR-AUC=0.868 F1=0.729
+[A4] epoch 9 train_loss=0.3795 val_loss=1.1123 A: PR-AUC=0.850 F1=0.726  B: PR-AUC=0.871 F1=0.748
+[A4] epoch 10 train_loss=0.3655 val_loss=1.1202 A: PR-AUC=0.858 F1=0.724  B: PR-AUC=0.876 F1=0.740
+[A4] epoch 11 train_loss=0.3477 val_loss=1.1075 A: PR-AUC=0.865 F1=0.730  B: PR-AUC=0.886 F1=0.774
+[A4] epoch 12 train_loss=0.3260 val_loss=1.1359 A: PR-AUC=0.868 F1=0.734  B: PR-AUC=0.890 F1=0.749
+[A4] epoch 13 train_loss=0.3003 val_loss=1.0578 A: PR-AUC=0.872 F1=0.782  B: PR-AUC=0.896 F1=0.794
+[A4] epoch 14 train_loss=0.2721 val_loss=1.0295 A: PR-AUC=0.884 F1=0.803  B: PR-AUC=0.903 F1=0.792
+[A4] epoch 15 train_loss=0.2447 val_loss=0.9976 A: PR-AUC=0.888 F1=0.803  B: PR-AUC=0.910 F1=0.824
+[A4] epoch 16 train_loss=0.2167 val_loss=1.0066 A: PR-AUC=0.896 F1=0.816  B: PR-AUC=0.914 F1=0.832
+[A4] epoch 17 train_loss=0.1848 val_loss=0.9833 A: PR-AUC=0.903 F1=0.837  B: PR-AUC=0.915 F1=0.838
+[A4] epoch 18 train_loss=0.1606 val_loss=0.9761 A: PR-AUC=0.908 F1=0.848  B: PR-AUC=0.923 F1=0.849
+[A4] epoch 19 train_loss=0.1353 val_loss=0.9775 A: PR-AUC=0.912 F1=0.855  B: PR-AUC=0.917 F1=0.849
+[A4] epoch 20 train_loss=0.1171 val_loss=1.0274 A: PR-AUC=0.917 F1=0.849  B: PR-AUC=0.925 F1=0.851
+[A4] epoch 21 train_loss=0.1053 val_loss=1.0282 A: PR-AUC=0.916 F1=0.852  B: PR-AUC=0.924 F1=0.857
+[A4] epoch 22 train_loss=0.0890 val_loss=1.0950 A: PR-AUC=0.912 F1=0.858  B: PR-AUC=0.924 F1=0.860
+[A4] epoch 23 train_loss=0.0701 val_loss=1.0815 A: PR-AUC=0.920 F1=0.859  B: PR-AUC=0.925 F1=0.874
+🛑 Early stopping at epoch 23
+
+
+
+| Model / Ablation | PR-AUC (A) | F1 (A) | PR-AUC (B) | RMSE (C) | ECE | TTD (s) ↓ | FP/h ↓ |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| GBM (A1) | 0.983 | 0.959 | 0.985 | 0.0333 | 0.064 | 0.161 | 30.9 |
+| Bi-LSTM (Full) | 0.947 | 0.901 | 0.945 | 0.064 | 0.05 | 0.453 | 68.8 |
+| Bi-LSTM (No Context) | 0.954 | 0.914 | 0.955 | 0.0659 | 0.0419 | 0.363 | 61.6 |
+| Bi-LSTM (No Gating) | 0.785 | 0.839 | 0.79 | 0.0615 | 0.102 | 0 | 200 |
+| Bi-LSTM (Lag) | 0.951 | 0.909 | 0.956 | 0.0634 | 0.0886 | 0.531 | 54.7 |
+| Bi-LSTM (Short Seq) | 0.949 | 0.904 | 0.953 | 0.0645 | 0.0807 | 0.416 | 68.1 |
+| Bi-LSTM (Lag Robust) | 0.959 | 0.924 | 0.962 | 0.0639 | 0.0359 | 0.34 | 52.1 |
+| Bi-LSTM (MapFree) | 0.954 | 0.914 | 0.955 | 0.0641 | 0.0251 | 0.456 | 56 |
+| Bi-LSTM (Focal) | 0.972 | 0.951 | 0.968 | 0.0607 | 0.0784 | 0.23 | 34.1 |
+| TCN Small | 0.864 | 0.846 | 0.862 | 0.0664 | 0.114 | 0.316 | 150 |
+| Bi-LSTM (Big) | 0.959 | 0.926 | 0.958 | 0.0648 | 0.0571 | 0.366 | 49.3 |
