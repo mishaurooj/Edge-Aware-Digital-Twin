@@ -1,179 +1,103 @@
-# Edge-Aware Digital Twin for Real-Time Driver Behavior and Route Anomaly Prediction under 5G–V2X Constraints
+# 🚗 Edge-Aware Digital Twin for Real-Time Driver Behavior and Route Anomaly Prediction under 5G–V2X Constraints
 
-> Reproducible implementation and experimental results for  
-> **“Edge-Aware Digital Twin for Real-Time Driver Behavior and Route Anomaly Prediction under 5G–V2X Constraints”**
-
----
-
-## 🚗 Overview
-
-This repository contains the **Kaggle-executed experiments** and complete **Digital Twin (DT) pipeline** for real-time **driver behavior and route anomaly detection** using the **DBRA24 Dataset**.  
-The project couples **CAN-bus signal modeling**, **V2X link conditioning**, and **edge-deployable AI** for **fault detection and diagnosis (FDD)**.
+> **Official Kaggle Implementation and Results Repository**  
+> _Edge-Aware Digital Twin for Real-Time Driver Behavior and Route Anomaly Prediction under 5G–V2X Constraints_  
 
 ---
 
-## 🧠 System Components
+## 📘 Overview
+
+This repository contains complete **Kaggle-executed experiments**, **graphs**, **trained models**, and **deployment metrics** for the DBRA24 dataset.  
+The project integrates **CAN bus analytics**, **V2X link context**, and **edge deployment profiling** into a unified **Digital Twin (DT)** framework for real-time driver behavior and route anomaly detection.
+
+---
+
+## 📊 Dataset: [DBRA24 – Driver Behavior and Route Anomaly Detection](https://www.kaggle.com/datasets/datasetengineer/driver-behavior-and-route-anomaly-dataset-dbra24)
+
+- **Records:** 120,000  
+- **Features:** 26  
+- **Location:** California  
+- **Collected:** January 2023  
+- **Applications:** Driver behavior analysis, route anomaly detection, and fleet optimization  
+
+---
+
+## 🧠 Digital Twin Components
 
 | Module | Description | Framework |
 |---------|--------------|------------|
-| **CAN–Twin** | Learns temporal CAN traffic patterns using 1D convolutions and temporal context | PyTorch / TCN-Lite |
-| **Comm–Twin** | Generates latency, packet-loss, and bitrate context aligned with 5G NR-V2X standards | Simulated / ETSI MEC 030 |
-| **V2X–Aware Calibrator** | Adjusts model confidence using link conditions to ensure reliable probability estimates | PyTorch / MLP |
-| **Execution Orchestrator** | Routes inference between vehicle ECU (local) and MEC (edge) for optimal latency-energy balance | TensorRT / ONNX Runtime |
+| **CAN–Twin** | Learns temporal CAN traffic patterns (speed, RPM, braking) | TCN-Lite / Transformer-Tiny |
+| **Comm–Twin** | Models 5G NR–V2X link context (latency, loss, bitrate, AoI) | Simulated / ETSI MEC-030 |
+| **Calibrator** | V2X-conditioned reliability mapping (ECE, NLL optimization) | PyTorch MLP |
+| **Orchestrator** | Schedules MEC vs edge inference with adaptive timing | TensorRT / ONNX Runtime |
 
 ---
 
-## 📊 Dataset: [DBRA24 – Driver Behavior & Route Anomaly Detection](https://www.kaggle.com/datasets/datasetengineer/driver-behavior-and-route-anomaly-dataset-dbra24)
+## 🖼️ DBRA24 Feature Distributions
 
-| Property | Description |
-|-----------|--------------|
-| **Records** | 120,000 |
-| **Features** | 26 |
-| **Region** | California |
-| **Period** | January 2023 |
-| **Use Cases** | Driver profiling, route anomaly detection, logistics optimization |
+Below are the feature-wise distributions generated from the Kaggle notebook (`1-dbra24-visualization.ipynb`).  
+These show variability across trips and drivers.
 
-Each trip entry includes speed, acceleration, RPM, steering angle, trip distance, fuel consumption, lane deviation, brake usage, route anomaly flags, and behavioral consistency indices.
-
----
-
-## ⚗️ Kaggle Execution
-
-All experiments were executed in **Kaggle Notebooks** using the DBRA24 dataset.  
-The folder `Codes/` contains cleaned and exported `.ipynb` versions:
-
-| Notebook | Description |
-|-----------|--------------|
-| `1-dbra24-visualization.ipynb` | Exploratory Data Analysis and feature distribution graphs |
-| `2-dbra24-ablations-complete.ipynb` | Model ablation comparisons across 10 variants (A1–A10) |
-| `3-dbra24-DeLong-AUC-significance-test.ipynb` | Statistical tests for AUROC differences |
-| `4-dbra24-paper-graphs.ipynb` | IEEE-style figures for publication |
-| `train-loss-results-all-ablations.txt` | Aggregated training logs for reproducibility |
-
----
-
-## 📁 Repository Layout
-
-```
-EdgeAware-DigitalTwin-V2X/
-│
-├── Codes/
-│   ├── 1-dbra24-visualization.ipynb
-│   ├── 2-dbra24-ablations-complete.ipynb
-│   ├── 3-dbra24-DeLong-AUC-significance-test.ipynb
-│   ├── 4-dbra24-paper-graphs.ipynb
-│   └── train-loss-results-all-ablations.txt
-│
-├── DABRA24-Graphs/
-│   ├── dist_acceleration.png
-│   ├── dist_brake_usage.png
-│   ├── dist_speed.png
-│   ├── dist_route_deviation_score.png
-│   ├── dist_anomalous_event.png
-│   ├── dist_lane_deviation.png
-│   ├── dist_fuel_consumption.png
-│   ├── dist_geofencing_violation.png
-│   ├── dist_trip_duration.png
-│   └── ... (20 total feature distributions)
-│
-├── Results/
-│   ├── DBRA24_results.xlsx
-│   ├── deployment_metrics.xlsx
-│   └── train-loss-results-all-ablations.txt
-│
-├── Trained-Models/
-│   ├── A1_best.pt ... A10_best.pt
-│   ├── BiLSTM_Full_best.pt
-│   └── (PyTorch weights for all ablations)
-│
-└── README.md
-```
+| Feature | Visualization |
+|----------|----------------|
+| Acceleration | ![dist_acceleration](./DABRA24-Graphs/dist_acceleration.png) |
+| Acceleration Variation | ![dist_acceleration_variation](./DABRA24-Graphs/dist_acceleration_variation.png) |
+| Anomalous Events | ![dist_anomalous_event](./DABRA24-Graphs/dist_anomalous_event.png) |
+| Behavioral Consistency | ![dist_behavioral_consistency_index](./DABRA24-Graphs/dist_behavioral_consistency_index.png) |
+| Brake Usage | ![dist_brake_usage](./DABRA24-Graphs/dist_brake_usage.png) |
+| Driver ID | ![dist_driver_id](./DABRA24-Graphs/dist_driver_id.png) |
+| Fuel Consumption | ![dist_fuel_consumption](./DABRA24-Graphs/dist_fuel_consumption.png) |
+| Geofencing Violations | ![dist_geofencing_violation](./DABRA24-Graphs/dist_geofencing_violation.png) |
+| Heading | ![dist_heading](./DABRA24-Graphs/dist_heading.png) |
+| Lane Deviation | ![dist_lane_deviation](./DABRA24-Graphs/dist_lane_deviation.png) |
+| Latitude | ![dist_latitude](./DABRA24-Graphs/dist_latitude.png) |
+| Longitude | ![dist_longitude](./DABRA24-Graphs/dist_longitude.png) |
+| Route Anomaly | ![dist_route_anomaly](./DABRA24-Graphs/dist_route_anomaly.png) |
+| Route Deviation Score | ![dist_route_deviation_score](./DABRA24-Graphs/dist_route_deviation_score.png) |
+| RPM | ![dist_rpm](./DABRA24-Graphs/dist_rpm.png) |
+| Speed | ![dist_speed](./DABRA24-Graphs/dist_speed.png) |
+| Steering Angle | ![dist_steering_angle](./DABRA24-Graphs/dist_steering_angle.png) |
+| Stop Events | ![dist_stop_events](./DABRA24-Graphs/dist_stop_events.png) |
+| Trip Distance | ![dist_trip_distance](./DABRA24-Graphs/dist_trip_distance.png) |
+| Trip Duration | ![dist_trip_duration](./DABRA24-Graphs/dist_trip_duration.png) |
+| Trip ID | ![dist_trip_id](./DABRA24-Graphs/dist_trip_id.png) |
+| Vehicle ID | ![dist_vehicle_id](./DABRA24-Graphs/dist_vehicle_id.png) |
 
 ---
 
-## 📈 Experimental Results
+## 🧾 Comprehensive Detection, Calibration, and Event-Level Responsiveness Summary
 
-### **Model Comparison (DBRA24)**
-| Model | PR–AUC | F1 | ECE ↓ | TTD (s) ↓ | FP/h ↓ | Rank |
-|--------|--------:|----:|-------:|-----------:|--------:|------:|
-| **V2X–Boost (A1)** | **0.9825** | **0.9588** | 0.019 | 1.25 | 0.04 | 🥇 |
-| **Focal–Lite (A6)** | 0.9591 | 0.9240 | 0.036 | 1.78 | 0.06 | 🥈 |
-| **BiLSTM–Full** | 0.9510 | 0.9184 | 0.052 | 2.02 | 0.07 | 🥉 |
-
----
-
-### **Deployment Metrics (Edge vs MEC)**
-
-| Placement | Latency p50 (ms) | p95 (ms) | FLOPs (M) | Params (M) | Energy (J) |
-|------------|----------------:|----------:|-----------:|-------------:|------------:|
-| **Edge–Local (TensorRT)** | 8.3 | 8.4 | 0.130 | 0.012 | 0.019 |
-| **MEC–Remote (ONNX-INT8)** | 32.4 | 36.0 | 1.821 | 0.031 | 1.46 |
-
-> *Inference optimized via quantization (INT8) and layer fusion. Measured on Kaggle Tesla T4.*
+| Model / Ablation | PR-AUC(A) | F1(A) | PR-AUC(B) | RMSE(C) | ECE | Mean TTD (s) ↓ | FP/h ↓ | ΔAUC vs Full | Remarks |
+|------------------|-----------:|------:|-----------:|--------:|----:|----------------:|-------:|--------------:|----------|
+| 🥇 **V2X-Boost (A1)** | **0.983** | **0.959** | **0.985** | **0.033** | 0.064 | **0.161** | **30.9** | **+0.010** | Best overall responsiveness and accuracy |
+| A2 – Chrono-Base | 0.954 | 0.914 | 0.955 | 0.042 | 0.042 | 0.363 | 61.6 | +0.005 | Context-aware and stable convergence |
+| 🟥 A3 – Gate-Off | 0.785 | 0.839 | 0.790 | 0.062 | 0.102 | 0.000 | 200.0 | -0.027 | No gating → unstable calibration |
+| A4 – LagSense | 0.951 | 0.909 | 0.956 | 0.063 | 0.089 | 0.531 | 54.7 | -0.022 | Delayed under jittered signals |
+| A5 – MiniSeq | 0.949 | 0.904 | 0.953 | 0.065 | 0.081 | 0.416 | 68.1 | -0.016 | Fast but noise-sensitive |
+| 🥈 A6 – Sync-Net | 0.959 | 0.924 | 0.962 | 0.036 | 0.040 | 0.340 | 52.1 | +0.009 | Fast, well-calibrated detection |
+| A7 – Lag-Robust | 0.959 | 0.924 | 0.962 | 0.064 | 0.036 | 0.340 | 52.1 | +0.009 | Robust to temporal jitter |
+| A8 – Focal-Core | 0.972 | 0.951 | 0.968 | 0.061 | 0.078 | 0.230 | 34.1 | -0.028 | Better rare-fault sensitivity |
+| 🟥 A9 – Tempo-CNN | 0.864 | 0.846 | 0.862 | 0.066 | 0.114 | 0.316 | 150.0 | -0.019 | Limited temporal capacity |
+| 🥉 A10 – Deep-Core | 0.959 | 0.926 | 0.958 | 0.065 | 0.057 | 0.366 | 49.3 | +0.001 | High accuracy, moderate latency |
+| A11 – Fusion-Core | 0.947 | 0.901 | 0.945 | 0.064 | 0.050 | 0.453 | 68.8 | +0.002 | Full contextual fusion (Calibrator + Comm–Twin + Orchestrator) |
 
 ---
 
-## 🖼️ Sample Graphs
+## ⚙️ Deployment Profiling Summary (Edge / MEC)
 
-| Variable | Distribution |
-|-----------|--------------|
-| Acceleration | ![Acceleration](./DABRA24-Graphs/dist_acceleration.png) |
-| Steering Angle | ![Steering Angle](./DABRA24-Graphs/dist_steering_angle.png) |
-| Brake Usage | ![Brake Usage](./DABRA24-Graphs/dist_brake_usage.png) |
-| Route Deviation Score | ![Route Deviation](./DABRA24-Graphs/dist_route_deviation_score.png) |
-| RPM | ![RPM](./DABRA24-Graphs/dist_rpm.png) |
-
-> Each distribution plot shows normalized frequency with KDE overlay to depict driving and route dynamics variability.
-
----
-
-## ⚙️ Reproducibility
-
-**Run the experiments on Kaggle:**
-1. Upload `/Codes` notebooks to Kaggle.
-2. Attach the [DBRA24 dataset](https://www.kaggle.com/datasets/datasetengineer/driver-behavior-and-route-anomaly-dataset-dbra24).
-3. Execute cells sequentially.
-4. Outputs (metrics + figures) are saved to `/Results2` automatically.
-
----
-
-## 📦 Model Deployment
-
-**Export Formats**
-- ONNX: `onnx.export(model, sample, "model.onnx")`
-- TensorRT: `trtexec --onnx=model.onnx --int8`
-
-**MEC Integration**
-- Supports ETSI GS MEC-003 and MEC-030 APIs.
-- REST endpoint `/api/v2xdt/infer` for calibrated anomaly scores.
-
----
-
-## 📜 Citations
-
-```bibtex
-@article{ajmal2025edgeawareDT,
-  title={Edge-Aware Digital Twin for Real-Time Driver Behavior and Route Anomaly Prediction under 5G–V2X Constraints},
-  author={Ajmal, Muhammad and Khan, Misha Urooj and Suleman, Ahmad},
-  journal={IEEE Transactions on Intelligent Transportation Systems},
-  year={2025}
-}
-
-@dataset{dbra24,
-  author={Dataset Engineer},
-  title={Driver Behavior and Route Anomaly Detection (DBRA24)},
-  year={2024},
-  publisher={Kaggle},
-  url={https://www.kaggle.com/datasets/datasetengineer/driver-behavior-and-route-anomaly-dataset-dbra24}
-}
-```
-
----
-
-## 🧾 License
-
-- **Code** — MIT License  
-- **Data** — Licensed under [Kaggle Terms of Use](https://www.kaggle.com/datasets/datasetengineer/driver-behavior-and-route-anomaly-dataset-dbra24)
+| Model | p50 (ms) | p95 (ms) | p99 (ms) | Throughput (win/s) | FLOPs (M) | Params (M) | Energy (J) |
+|--------|----------:|----------:|----------:|-------------------:|-----------:|------------:|------------:|
+| **A1** | 32.38 | 33.76 | 36.05 | 15682.7 | 0.001 | 0.012 | 1.457 |
+| **A2** | 8.32 | 8.39 | 8.42 | 7698.2 | 130.01 | 2.161 | 0.018 |
+| **A3** | 8.32 | 8.40 | 8.42 | 7690.2 | 130.01 | 2.161 | 0.019 |
+| **A4** | 8.35 | 8.51 | 8.64 | 7685.3 | 130.01 | 2.161 | 0.019 |
+| **A5** | 8.34 | 8.42 | 8.44 | 7681.6 | 130.01 | 2.161 | 0.019 |
+| **A6** | 8.32 | 8.40 | 8.44 | 7689.8 | 130.01 | 2.161 | 0.019 |
+| **A7** | 8.31 | 8.38 | 8.44 | 7706.9 | 130.01 | 2.161 | 0.019 |
+| **A8** | 8.35 | 8.41 | 8.43 | 7668.8 | 130.01 | 2.161 | 0.019 |
+| **A9** | 8.36 | 8.46 | 8.50 | 7651.6 | 130.01 | 2.161 | 0.019 |
+| **A10** | 59.66 | 61.01 | 65.85 | 1067.7 | 1.821 | 0.031 | 0.061 |
+| **A11** | 8.32 | 8.40 | 8.46 | 7690.4 | 130.01 | 2.161 | 0.019 |
 
 ---
 
@@ -189,12 +113,14 @@ EdgeAware-DigitalTwin-V2X/
 
 ## 🧩 Acknowledgment
 
-This research was performed on **Kaggle GPUs (Tesla T4)** under the  
-**DigitalTwin-Fault Project**, with support from the  
-**Deanship of Scientific Research, IMSIU (Grant IMSIU-DDRSP2504).**
+This work was executed on **Kaggle Tesla T4 GPUs** under the **DigitalTwin-Fault Project**.  
+Supported by the **Deanship of Scientific Research, Imam Mohammad Ibn Saud Islamic University (IMSIU)** — Grant **IMSIU-DDRSP2504**.
 
 ---
 
-## 🌐 Repository Snapshot
+## 📜 License
 
-![Project Summary](./docs/repo_overview.png)
+- **Code**: MIT License  
+- **Dataset**: [Kaggle DBRA24 Terms of Use](https://www.kaggle.com/datasets/datasetengineer/driver-behavior-and-route-anomaly-dataset-dbra24)
+
+---
