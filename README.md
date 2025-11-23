@@ -10,6 +10,7 @@
 This repository contains complete **Kaggle-executed experiments**, **graphs**, **trained models**, and **deployment metrics** for the DBRA24 dataset.  
 The project integrates **CAN bus analytics**, **V2X link context**, and **edge deployment profiling** into a unified **Digital Twin (DT)** framework for real-time driver behavior and route anomaly detection.
 
+![Banner](DigitalTwin_Edge_Aware1.jpg)
 ---
 
 ## 📊 Dataset: [DBRA24 – Driver Behavior and Route Anomaly Detection](https://www.kaggle.com/datasets/datasetengineer/driver-behavior-and-route-anomaly-dataset-dbra24)
@@ -65,39 +66,6 @@ These show variability across trips and drivers.
 
 ---
 
-## 🧾 Comprehensive Detection, Calibration, and Event-Level Responsiveness Summary
-
-| Model / Ablation | PR-AUC(A) | F1(A) | PR-AUC(B) | RMSE(C) | ECE | Mean TTD (s) ↓ | FP/h ↓ | ΔAUC vs Full | Remarks |
-|------------------|-----------:|------:|-----------:|--------:|----:|----------------:|-------:|--------------:|----------|
-| 🥇 **V2X-Boost (A1)** | **0.983** | **0.959** | **0.985** | **0.033** | 0.064 | **0.161** | **30.9** | **+0.010** | Best overall responsiveness and accuracy |
-| A2 – Chrono-Base | 0.954 | 0.914 | 0.955 | 0.042 | 0.042 | 0.363 | 61.6 | +0.005 | Context-aware and stable convergence |
-| 🟥 A3 – Gate-Off | 0.785 | 0.839 | 0.790 | 0.062 | 0.102 | 0.000 | 200.0 | -0.027 | No gating → unstable calibration |
-| A4 – LagSense | 0.951 | 0.909 | 0.956 | 0.063 | 0.089 | 0.531 | 54.7 | -0.022 | Delayed under jittered signals |
-| A5 – MiniSeq | 0.949 | 0.904 | 0.953 | 0.065 | 0.081 | 0.416 | 68.1 | -0.016 | Fast but noise-sensitive |
-| 🥈 A6 – Sync-Net | 0.959 | 0.924 | 0.962 | 0.036 | 0.040 | 0.340 | 52.1 | +0.009 | Fast, well-calibrated detection |
-| A7 – Lag-Robust | 0.959 | 0.924 | 0.962 | 0.064 | 0.036 | 0.340 | 52.1 | +0.009 | Robust to temporal jitter |
-| A8 – Focal-Core | 0.972 | 0.951 | 0.968 | 0.061 | 0.078 | 0.230 | 34.1 | -0.028 | Better rare-fault sensitivity |
-| 🟥 A9 – Tempo-CNN | 0.864 | 0.846 | 0.862 | 0.066 | 0.114 | 0.316 | 150.0 | -0.019 | Limited temporal capacity |
-| 🥉 A10 – Deep-Core | 0.959 | 0.926 | 0.958 | 0.065 | 0.057 | 0.366 | 49.3 | +0.001 | High accuracy, moderate latency |
-| A11 – Fusion-Core | 0.947 | 0.901 | 0.945 | 0.064 | 0.050 | 0.453 | 68.8 | +0.002 | Full contextual fusion (Calibrator + Comm–Twin + Orchestrator) |
-
----
-
-## ⚙️ Deployment Profiling Summary (Edge / MEC)
-
-| Model | p50 (ms) | p95 (ms) | p99 (ms) | Throughput (win/s) | FLOPs (M) | Params (M) | Energy (J) |
-|--------|----------:|----------:|----------:|-------------------:|-----------:|------------:|------------:|
-| **A1** | 32.38 | 33.76 | 36.05 | 15682.7 | 0.001 | 0.012 | 1.457 |
-| **A2** | 8.32 | 8.39 | 8.42 | 7698.2 | 130.01 | 2.161 | 0.018 |
-| **A3** | 8.32 | 8.40 | 8.42 | 7690.2 | 130.01 | 2.161 | 0.019 |
-| **A4** | 8.35 | 8.51 | 8.64 | 7685.3 | 130.01 | 2.161 | 0.019 |
-| **A5** | 8.34 | 8.42 | 8.44 | 7681.6 | 130.01 | 2.161 | 0.019 |
-| **A6** | 8.32 | 8.40 | 8.44 | 7689.8 | 130.01 | 2.161 | 0.019 |
-| **A7** | 8.31 | 8.38 | 8.44 | 7706.9 | 130.01 | 2.161 | 0.019 |
-| **A8** | 8.35 | 8.41 | 8.43 | 7668.8 | 130.01 | 2.161 | 0.019 |
-| **A9** | 8.36 | 8.46 | 8.50 | 7651.6 | 130.01 | 2.161 | 0.019 |
-| **A10** | 59.66 | 61.01 | 65.85 | 1067.7 | 1.821 | 0.031 | 0.061 |
-| **A11** | 8.32 | 8.40 | 8.46 | 7690.4 | 130.01 | 2.161 | 0.019 |
 
 ---
 
