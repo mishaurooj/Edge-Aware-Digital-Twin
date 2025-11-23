@@ -64,26 +64,40 @@ This repository contains:
 
 ### **Table 2 — Efficiency & Orchestration Profiling**
 
-| Model | p50 | p95 | p99 | Throughput | FLOPs | Params | Energy |
-|------|-----|-----|-----|------------|--------|--------|--------|
-| A1 – GBM | 32.38 | 33.76 | 36.05 | **15682.7** | **0.001M** | 0.012M | **1.46J** |
-| A2 – Context | 8.32 | 8.39 | 8.42 | 7698.2 | 130M | 2.16M | 0.0184J |
-| A3 – NoGate | 8.32 | 8.40 | 8.42 | 7690.2 | 130M | 2.16M | 0.0187J |
-| A4 – Big | 59.66 | 61.01 | 65.85 | 1067.7 | 1821M | 0.031M | 0.061J |
-| A5 – Lag | ... | ... | ... | ... | ... | ... | ... |
-| **A11 – Full** | 8.32 | 8.40 | 8.46 | 7690.4 | 130M | 2.16M | 0.0193J |
+| Model / Ablation      | p50 Lat. (ms) | p95 Lat. (ms) | p99 Lat. (ms) | Throughput (win/s) | FLOPs (M) | Params (M) | Energy (J) |
+|-----------------------|---------------|---------------|---------------|---------------------|-----------|------------|------------|
+| A1 – GBM (Static)     | 32.38         | 33.76         | 36.05         | **15682.7**         | **0.001** | 0.012      | **1.46**   |
+| A2 – TCN-DT–Context   | 8.32          | 8.39          | 8.42          | 7698.2              | 130.0     | 2.16       | 0.0184     |
+| A3 – TCN-DT–NoGate    | 8.32          | 8.40          | 8.42          | 7690.2              | 130.0     | 2.16       | 0.0187     |
+| A4 – TCN-DT–Big       | **59.66**     | **61.01**     | **65.85**     | **1067.7**          | 1821.0    | 0.031      | **0.061**  |
+| A5 – TCN-DT–Lag       | 8.35          | 8.51          | 8.64          | 7685.3              | 130.0     | 2.16       | 0.0188     |
+| A6 – TCN-DT–ShortSeq  | 8.34          | 8.42          | 8.44          | 7681.6              | 130.0     | 2.16       | 0.0189     |
+| A7 – TCN-DT–LagRobust | 8.32          | 8.40          | 8.44          | 7689.8              | 130.0     | 2.16       | 0.0190     |
+| A8 – TCN-DT–MapFree   | 8.31          | 8.38          | 8.44          | 7706.9              | 130.0     | 2.16       | 0.0191     |
+| A9 – TCN-DT–Focal     | 8.35          | 8.41          | 8.43          | 7668.8              | 130.0     | 2.16       | 0.0192     |
+| A10 – TCN-DT–Edge     | **8.36**      | **8.46**      | **8.50**      | 7651.6              | 130.0     | 2.16       | **0.0190** |
+| **A11 – TCN-DT–Full** | 8.32          | 8.40          | 8.46          | 7690.4              | 130.0     | 2.16       | 0.0193     |
+
+
 
 ---
 
 ### **Table 3 — Ablation Mapping**
+| ID  | Variant               | Objective / Modification                       | Active Modules | Primary Phase Under Test              |
+|-----|------------------------|------------------------------------------------|----------------|----------------------------------------|
+| A1  | GBM (Static Baseline) | Non-sequential baseline; no temporal or link awareness. | –              | Static benchmark for comparison        |
+| A2  | TCN–DT–Context        | Removes environment context.                   | P1, P3–P4      | P1 – physical model isolation          |
+| A3  | TCN–DT–NoGate         | Disables reliability gates / noise.            | P1–P3          | P3 – calibration stress                |
+| A4  | TCN–DT–Big            | Enlarged network (no energy limit).            | P1, P4         | P4 – latency/efficiency trade-off      |
+| A5  | TCN–DT–Lag            | Adds 100–300 ms stream offset.                 | P1–P4          | P2 – comm alignment sensitivity        |
+| A6  | TCN–DT–ShortSeq       | Shorter temporal window (20 s).                | P1–P4          | P1 – temporal window impact            |
+| A7  | TCN–DT–LagRobust      | Jitter-augmented training.                     | P1–P4          | P1–P2 – sync robustness                |
+| A8  | TCN–DT–MapFree        | Removes map/geofencing inputs.                 | P1, P3–P4      | P3 – spatial calibration check         |
+| A9  | TCN–DT–Focal          | Focal loss for class imbalance.                | P3–P4          | P3 – reliability optimization          |
+| A10 | TCN–DT–Edge           | Distilled variant for MEC deployment.          | P1, P4         | P4 – edge deployability optimization   |
+| A11 | **TCN–DT–Full (Proposed)** | **All modules active; complete DT.**     | **P1–P4**      | **Full system integration**            |
 
-| ID | Variant | Objective | Active Modules | Phase |
-|----|---------|-----------|----------------|--------|
-| A1 | GBM | Static baseline | – | Benchmark |
-| A2 | Context | Remove env. context | P1, P3–P4 | P1 |
-| A3 | NoGate | Disable gates | P1–P3 | P3 |
-| ... | ... | ... | ... | ... |
-| **A11** | **Full** | **Complete unified DT** | **P1–P4** | **Full integration** |
+
 
 ---
 
