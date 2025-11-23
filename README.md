@@ -103,11 +103,11 @@ This repository contains:
 
 ## 🧠 Architecture
 
-### **Unified Digital Twin Pipeline**
+### **Proposed Model Architectures (a) Gate Layer that applies feature-wise modulation to the input sequence.  (b) TCN Block illustrates the temporal convolution block used to extract short-range motion patterns.  (c) TCN Edge presents the TCN-DT-Edge model, which stacks dilated convolutions and combines the output with static context for on-vehicle inference.  (d) TCN DT Full model, where BiLSTM layers replace the TCN stack to support cloud-level processing.**
 ![Architecture](DigitalTwin_Models_Architecture.jpg)
 
-### **Edge-Aware MEC Deployment**
-![Edge](DigitalTwin_Edge_Aware1.jpg)
+### **Performance variations in PR-AUC, F1, ECE, FP/h, and the proposed NPI metric across all proposed ablations.**
+![Edge](ablation_1x5.png)
 
 ---
 ---
