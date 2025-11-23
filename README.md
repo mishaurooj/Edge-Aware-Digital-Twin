@@ -149,11 +149,16 @@ These show variability across trips and drivers.
 
 ## 🧑‍💻 Authors
 
-| Name | Affiliation | Email |
-|------|--------------|--------|
-| **Muhammad Ajmal** | IMSIU | [email protected] |
-| **Misha Urooj Khan** | CERN | misha.urooj.khan@cern.ch |
-| **Ahmad Suleman** | CRD | [email protected] |
+| Name | Affiliation | Role / Membership | Email |
+|------|-------------|-------------------|--------|
+| **Ajmal Khan** | IMSIU | Member, IEEE | ajmal@imamu.edu.sa |
+| **Misha Urooj Khan** | CERN | Researcher | misha.urooj.khan@cern.ch |
+| **Ahmad Suleman** | CRD | Research Scientist | ahmad.suleman@crd.org |
+| **Zeeshan Kaleem** | KFUPM | Senior Member, IEEE | zkaleem@kfupm.edu.sa |
+| **Naveed Iqbal** | Qatar University | Senior Member, IEEE | naveed.iqbal@qu.edu.qa |
+| **M. Bait Suwailem** | KACST | Member, IEEE | bait.suwailem@kacst.edu.sa |
+| **Dusit Niyato** | NTU Singapore | Fellow, IEEE | dniyato@ntu.edu.sg |
+
 
 ---
 
